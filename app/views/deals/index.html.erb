@@ -1,0 +1,8 @@
+  <% @response.each do |r| %>
+  <div class = "deal">
+    <span class = "name"><%= r["name"] %></span>
+    <span class = "city"><%= r["city"] %></span>
+    <span class = "starRating"><%= r["starRating"] %></span>
+  </div>  
+  <% end %>
+

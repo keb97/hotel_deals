@@ -13,7 +13,6 @@ HotelDeals::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   get '/deals', :to => 'deals#index', :as => 'deals'
-  get '/deal/:id', :to => 'deals#show', :as => 'deal' 
 
   # Example resource route with options:
   #   resources :products do

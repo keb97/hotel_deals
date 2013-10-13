@@ -1,16 +1,17 @@
-<p><input type="text" data-source="@response"></p>
+<%= render 'deals/search' %>
 
 <% @response.each do |r| %>
   <div class = "deal">
     <span class = "name"><%= r["name"] %></span>
     <span class = "city"><%= r["city"] %></span>
     <span class = "starRating"><%= r["starRating"] %></span>
+    <span class = "photo"><img src="<%=r['imageUrl']%>"></span>
 
     <!-- Button trigger modal -->
-    <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Find out more!</a>
+    <a data-toggle="modal" href="#myModal<%=r["hotelId"]%>" class="btn btn-primary btn-lg">Find out more!</a>
 
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="myModal<%=r["hotelId"]%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -19,6 +20,7 @@
           </div>
           <div class="modal-body">
             <%= r["longDestinationName"] %>
+            <%= r["country"] %>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -1,7 +1,15 @@
 <%= render 'deals/search' %>
 
 <% @response.each do |r| %>
-  <div class = "deal">
+  <% if (r["percentSavings"] < 40) && (r["starRating"] < 3) %>
+    <div class = "deal low-val low-star">
+  <% elsif (r["percentSavings"] < 40) %>
+    <div class = "deal low-val">
+  <% elsif (r["starRating"] < 3) %>
+   <div class = "deal low-star">
+  <% else %>
+    <div class = "deal">
+  <% end %>
     <span class = "name"><%= r["name"] %></span>
     <span class = "city"><%= r["city"] %></span>
     <span class = "starRating"><%= r["starRating"] %></span>

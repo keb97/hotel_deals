@@ -17,15 +17,18 @@
   <% if (r["percentSavings"] < 40) && (r["starRating"] < 3) %>
     <div class = "deal low-val low-star">
   <% elsif (r["percentSavings"] < 40) %>
-    <div class = "deal low-val">
+    <div class = "deal low-val high-star">
   <% elsif (r["starRating"] < 3) %>
-   <div class = "deal low-star">
+   <div class = "deal low-star high-val">
   <% else %>
     <div class = "deal">
   <% end %>
       <span class = "name"><%= r["name"] %></span><br/>
       <span class = "city"><%= r["city"] %></span><br/>
       <span class = "starRating">Rating: <%= r["starRating"] %>/4.0</span></br>
+      <% if r["percentSavings"] > 0 %>
+        <span class = "percentSavings"><%= r["percentSavings"] %>% off normal rates!</span></br>
+      <% end %>
       <span class = "photo"><img src="<%=r['imageUrl']%>"></span>
 
       <!-- Button trigger modal -->

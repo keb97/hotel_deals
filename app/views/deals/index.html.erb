@@ -1,12 +1,12 @@
 <form class>
-  <div class="span4 form">
+  <div class="form span4">
     <label class="checkbox">
       <input type = "checkbox" name = "Great Value", class = "great-value">Select Great Value<br>
     </label>
   </div>
 
-  <div class="span4 form">
-    <label class="checkbox">
+  <div class="form">
+    <label class="checkbox span4">
       <input type = "checkbox" name = "Top Rated", class = "top-rated">Select Top Rated<br>
     </label>
   </div>
@@ -32,24 +32,21 @@
       <a data-toggle="modal" href="#myModal<%=r["hotelId"]%>" class="btn btn-primary btn-lg">Find out more!</a>
   
       <!-- Modal -->
-      <div class="modal fade" id="myModal<%=r["hotelId"]%>" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title"><%= r["name"] %></h4>
-            </div>
-            <div class="modal-body">
-              <span class = "photo"><img src="<%=r['imageUrl']%>"></span><br/>
-              <span class = "longDestinationName"><%= r["longDestinationName"] %></span><br/>
-              <span><%= r["description"] %></span><br/>
-              <span class="cost">Cost: Only $<%= r["totalRate"] %> per night!</span>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
+      <div class="modal hide fade" id="myModal<%=r["hotelId"]%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title"><%= r["name"] %></h4>
+        </div>
+        <div class="modal-body">
+          <span class = "photo"><img src="<%=r['imageUrl']%>"></span><br/>
+          <span class = "longDestinationName"><%= r["longDestinationName"] %></span><br/>
+          <span><%= r["description"] %></span><br/>
+          <span class="cost">Cost: Only $<%= r["totalRate"] %> per night!</span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
       </div><!-- /.modal -->
-    </div>  
+    </div>    
 <% end %>
   

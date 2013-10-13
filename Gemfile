@@ -49,4 +49,15 @@ end
   gem 'rails_12factor', group: :production
   ruby "2.0.0"
 
+  group :development, :test do
+    gem 'rspec-rails', '~> 2.0'
+  end
+
+  group :test do
+  	gem 'vcr'
+  	gem 'fakeweb'
+  	gem 'capybara'
+  	gem 'selenium-webdriver'
+  end
+
 

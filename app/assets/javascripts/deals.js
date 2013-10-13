@@ -1,11 +1,19 @@
 $(document).ready(function(){
 
-  $('form').on('click', ".great-value", function(){  
-    $('.low-val').fadeOut(350);
+  $('form').on('click', ".great-value", function(){ 
+    if($(this).is(':checked')){
+      $('.low-val').fadeOut(200);
+    } else { 
+      $('.low-val').fadeIn(200);
+    }
   });
 
-   $('form').on('click', ".top-rated", function(){  
-    $('.low-star').fadeOut(350);
+  $('form').on('click', ".top-rated", function(){
+    if($(this).is(':checked')){  
+      $('.low-star').fadeOut(200);
+    } else {
+      $('.low-star').fadeIn(200);
+    }
   });
 
 });  

@@ -24,13 +24,8 @@ Once you have the database.yml file set up correctly, run the following commands
 
 Now you should be able to access the app by visiting localhost:3000 in your browser of choice.
 
-If you would like to run the spec, you can run:
+If you would like to run the specs, you should run the following commands:
 - rake db:test:prepare
 - bundle exec rspec
 
 The specs may take some time to run the first time through, as the gem VCR will be making a request to the API and the creating a new cassette. Subsequent runnings of the specs will not take as much time.
-
-Other comments
---------------
-There are no problems I am aware of with the specs or the functionality of this application. 
-I am assuming that users would like to see a wide variety of hotel options at one time.
